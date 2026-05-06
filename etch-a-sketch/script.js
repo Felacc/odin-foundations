@@ -12,7 +12,7 @@ function createGrid (gridSize) {
     // rows
     for (i = 0; i < gridSize; i++) {
         const gridRow = document.createElement("div")
-        gridRow.classList.add("gridRow")
+        gridRow.classList.add("gridRow", "flex")
         gridContainer.appendChild(gridRow)
         // columns
         for (j = 0; j < gridSize; j++) {

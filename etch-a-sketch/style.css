@@ -1,1 +1,69 @@
+/* Global Variables */
+:root {
+    /* Colors */
+    --color-text: white;
+    --color-bg: darkblue;
+    --color-border: black;
+}
 
+/* clear formatting and set border-box globally */
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    color: var(--color-text);
+    background-color: var(--color-bg);
+}
+
+#header {
+    min-height: 25vh;
+}
+
+#main {
+    min-height: 50vh;
+}
+
+#footer {
+    min-height: 25vh;
+}
+
+.container {
+    width: 100%;
+    margin-inline: auto; /* center */
+}
+
+/* Flexbox stuff */
+.flex {
+    display: flex;
+}
+
+.flex-col {
+    display: flex;
+    flex-direction: column;
+}
+
+.flex-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* Etch-a-sketch stuff*/
+#grid {
+    width: 400px;
+    height: 400px;
+}
+
+.gridRow {
+    flex: 1;
+}
+
+.gridCol {
+    flex: 1;
+    background-color: var(--color-text);
+    border: solid 1px var(--color-border);
+}
