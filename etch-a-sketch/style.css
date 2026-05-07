@@ -21,6 +21,7 @@ body {
 
 #header {
     min-height: 25vh;
+    gap: 1rem;
 }
 
 #main {
@@ -82,4 +83,3 @@ body {
     background-color: var(--color-text);
     border: solid 1px var(--color-border);
 }
-
