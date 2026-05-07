@@ -62,7 +62,7 @@ body {
     flex: 1;
 }
 
-.gridCol {
+.gridSquare {
     flex: 1;
     background-color: var(--color-text);
     border: solid 1px var(--color-border);
