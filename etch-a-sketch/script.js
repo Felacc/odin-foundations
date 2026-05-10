@@ -2,7 +2,7 @@
 const gridContainer = document.querySelector("#grid");
 let gridSize = 16;
 
-// main
+
 function main() {
     createGrid(gridSize);
     activateButton();
@@ -29,11 +29,7 @@ function createGrid (gridSize) {
 
 function sketchable(div) {
     div.addEventListener("mouseenter", () => {
-        if (div.style.backgroundColor == "black") {
-            div.style.backgroundColor = "white";
-        } else {
-            div.style.backgroundColor = "black";
-        }
+        randomizeBackground(div);
         
     });
 }
@@ -44,8 +40,22 @@ function activateButton() {
         gridSize = prompt("How big should the grid be?")
         createGrid(gridSize);
     })
+}
 
+// return int between min (inclusive) and max (exclusive)
+function getRandomInt (min, max){
+    const minCeiled = Math.ceil(min);
+    const maxFloored = Math.floor(max);
+    return Math.floor(Math.random() * (maxFloored - minCeiled) + minCeiled);
+}
+
+
+function randomizeBackground(div) {
+    let r = getRandomInt(0, 255);
+    let g = getRandomInt(0, 255);
+    let b = getRandomInt(0, 255);
     
+    div.style.backgroundColor = `rgb(${r}, ${g}, ${b})`
 }
 // call main
 main();
