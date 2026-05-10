@@ -21,6 +21,7 @@ function createGrid (gridSize) {
         for (j = 0; j < gridSize; j++) {
             const gridSquare = document.createElement("div");
             gridSquare.classList.add("gridSquare");
+            gridSquare.style.opacity = "0";
             sketchable(gridSquare);
             gridRow.appendChild(gridSquare);
         }
@@ -30,7 +31,7 @@ function createGrid (gridSize) {
 function sketchable(div) {
     div.addEventListener("mouseenter", () => {
         randomizeBackground(div);
-        
+        darken(div);
     });
 }
 
@@ -54,8 +55,16 @@ function randomizeBackground(div) {
     let r = getRandomInt(0, 255);
     let g = getRandomInt(0, 255);
     let b = getRandomInt(0, 255);
-    
+
     div.style.backgroundColor = `rgb(${r}, ${g}, ${b})`
+}
+
+function darken(div) {
+    let opacity = Number(div.style.opacity);
+    if (opacity < 1) {
+        opacity += 0.1;
+        div.style.opacity = opacity.toFixed(1);
+    }
 }
 // call main
 main();
