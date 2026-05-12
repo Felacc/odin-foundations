@@ -66,8 +66,9 @@ function darken(div) {
     if (opacity < 1) {
         opacity += 0.1;
         div.style.opacity = opacity.toFixed(1);
+        
     }
 }
-// call main
+
 main();
  
