@@ -1,14 +1,13 @@
-// global vars
+/** @fileoverview Etch-a-sketch grid app - creates a drawable grid with randomized colors*/
+
 const gridContainer = document.querySelector("#grid");
 let gridSize = 16;
-
 
 function main() {
     createGrid(gridSize);
     activateButton();
 }
 
-// create grid  
 function createGrid (gridSize) {
     // clear grid
     gridContainer.innerHTML = "";
@@ -17,7 +16,7 @@ function createGrid (gridSize) {
         const gridRow = document.createElement("div");
         gridRow.classList.add("gridRow", "flex");
         gridContainer.appendChild(gridRow);
-        // columns
+        // columns  
         for (j = 0; j < gridSize; j++) {
             const gridSquare = document.createElement("div");
             gridSquare.classList.add("gridSquare");
@@ -28,10 +27,10 @@ function createGrid (gridSize) {
     }
 }
 
-function sketchable(div) {
-    div.addEventListener("mouseenter", () => {
-        randomizeBackground(div);
-        darken(div);
+function sketchable(element) {
+    element.addEventListener("mouseenter", () => {
+        randomizeBackground(element);
+        darken(element);
     });
 }
 
@@ -43,7 +42,10 @@ function activateButton() {
     })
 }
 
-// return int between min (inclusive) and max (exclusive)
+/** Returns a number between min (inclusive) max (exclusive)
+ * @param {number} min 
+ * @param {number} max
+ */
 function getRandomInt (min, max){
     const minCeiled = Math.ceil(min);
     const maxFloored = Math.floor(max);
